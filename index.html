@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>BAT & PREFAB – Leader de la construction préfabriquée en Côte d'Ivoire</title>
+    <meta name="description" content="BAT & PREFAB : construction industrielle, modulaire et préfabriquée en Côte d'Ivoire. Bâtiments clés en main, devis gratuit, expertise locale depuis 2018.">
+    <meta name="keywords" content="construction préfabriquée Côte d'Ivoire, bâtiment modulaire Abidjan, construction industrielle, préfabriqué pas cher, BAT & PREFAB">
+    <meta name="author" content="BAT & PREFAB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.batprefab.com/">
+    <link rel="alternate" hreflang="fr" href="https://www.batprefab.com/">
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.batprefab.com/">
+    <meta property="og:title" content="BAT & PREFAB – Construction préfabriquée en Côte d'Ivoire">
+    <meta property="og:description" content="Spécialiste du bâtiment industriel et modulaire. Réalisez vos projets avec rapidité, innovation et qualité.">
+    <meta property="og:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    <meta property="og:image:alt" content="Logo BAT & PREFAB construction préfabriquée">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="BAT & PREFAB">
+    
+   
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BAT & PREFAB – Construction préfabriquée Côte d'Ivoire">
+    <meta name="twitter:description" content="Solutions modulaires et industrielles clés en main. Devis gratuit.">
+    <meta name="twitter:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BAT & PREFAB",
+      "url": "https://www.batprefab.com",
+      "logo": "https://www.batprefab.com/logo-bat-prefab.png",
+      "description": "Leader ivoirien de la construction préfabriquée, modulaire et industrielle.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abidjan",
+        "addressCountry": "Côte d'Ivoire"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+2250556121339",
+          "contactType": "customer service",
+          "availableLanguage": "French"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/Batprefab.ci",
+        "https://www.linkedin.com/company/bat-prefab",
+        "https://wa.me/2250556121339"
+      ],
+      "foundingDate": "2018",
+      "areaServed": ["Côte d'Ivoire", "Togo", "Burkina Faso", "Cameroun"]
+    }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+<style>
+    
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .project-item {
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        border-bottom: 4px solid #eee;
+        transition: all 0.3s ease;
+    }
+
+    .project-item:hover {
+        transform: translateY(-10px);
+        border-bottom-color: var(--highlight-color, #0066CC);
+    }
+
+    .project-media {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+        background: #222;
+    }
+
+    .project-media img, .project-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .project-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--highlight-color, #0066CC);
+        color: #fff;
+        padding: 5px 12px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .project-content {
+        padding: 25px;
+    }
+
+    .project-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.4rem;
+        color: #1a1a1a;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .project-description {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .cta-container {
+        text-align: center;
+        margin-top: 60px;
+        padding-bottom: 20px;
+    }
+
+    .btn-plans-trigger {
+        display: inline-block;
+        padding: 15px 40px;
+        background-color: transparent;
+        color: #0066CC;
+        border: 2px solid #0066CC;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .btn-plans-trigger:hover {
+        background-color: #0066CC;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+            padding: 0 10px;
+        }
+        .btn-plans-trigger {
+            width: 85%;
+        }
+    }
+
+    .header-wrapper {
+        background: #ffffff !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 20px;
+        padding: 0 5%;
+        height: 70px;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        justify-self: start;
+    }
+
+    .logo-img {
+        height: 50px;
+        width: auto;
+    }
+
+    .nav-links {
+        justify-self: center;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li a {
+        font-family: var(--font-heading);
+        font-size: 14px;
+        text-transform: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+        position: relative;
+        color: #000 !important;
+    }
+
+    .nav-links li a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #0066CC;
+        transition: var(--transition-slow);
+    }
+
+    .nav-links li a:hover::after {
+        width: 100%;
+    }
+
+    .btn-contact {
+        padding: 8px 20px;
+        border: 1px solid #0066CC;
+        color: #0066CC !important;
+        font-size: 12px;
+        transition: var(--transition-fast);
+        text-transform: none;
+    }
+
+    .btn-contact:hover {
+        background: #0066CC;
+        color: #fff !important;
+    }
+
+    .header-social-icons {
+        justify-self: end;
+        display: flex;
+        gap: 15px;
+    }
+
+    .header-social-icons .social-icon {
+        color: #0066CC;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+
+    .header-social-icons .social-icon:hover {
+        color: #004499;
+    }
+
+    .contact-bar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        color: #000;
+        cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            flex-direction: column;
+            padding: 20px;
+            display: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        .nav-links.nav-active {
+            display: flex;
+        }
+        .header-social-icons {
+            display: flex;
+            gap: 10px;
+            margin-right: 10px;
+        }
+        .menu-toggle {
+            display: block;
+            order: 2;
+        }
+        .logo {
+            order: 1;
+        }
+        .header-social-icons {
+            order: 3;
+        }
+    }
+
+    .hero-section {
+        margin-top: 70px !important;
+    }
+
+    .btn-primary {
+        background-color: #0066CC !important;
+        border-color: #0066CC !important;
+        color: #ffffff !important;
+    }
+    .btn-primary:hover {
+        background-color: #004499 !important;
+        color: #fff !important;
+    }
+    .btn-secondary-outline {
+        border-color: #0066CC !important;
+        color: #0066CC !important;
+    }
+    .btn-secondary-outline:hover {
+        background-color: #0066CC !important;
+        color: #fff !important;
+    }
+    .btn-submit {
+        background: #0066CC !important;
+        color: white !important;
+        border: none;
+    }
+    .btn-submit:hover {
+        background: #004499 !important;
+    }
+    .footer-contact-item a:hover {
+        color: #0066CC !important;
+    }
+    .section-label {
+        color: #0066CC !important;
+    }
+    .info-box h3 {
+        border-left-color: #0066CC !important;
+    }
+    .stat-number {
+        color: #0066CC !important;
+    }
+    .why-card.highlight-card {
+        background: #0066CC !important;
+    }
+    .why-card.highlight-card .card-icon,
+    .why-card.highlight-card h3,
+    .why-card.highlight-card p {
+        color: #fff !important;
+    }
+    .card-icon {
+        color: #0066CC !important;
+    }
+    .projects-swiper .swiper-button-next,
+    .projects-swiper .swiper-button-prev {
+        color: #0066CC !important;
+    }
+    .scroll-text {
+        color: #0066CC !important;
+    }
+    .scroll-arrows span {
+        border-bottom-color: #0066CC !important;
+        border-right-color: #0066CC !important;
+    }
+    .ticker-bar {
+        background: linear-gradient(90deg, #D4AF37, #FFD700, #D4AF37) !important;
+    }
+    .highlight, .hero-title .highlight {
+        color: #FFC107 !important;
+    }
+    .footer-section {
+        border-top-color: #0066CC !important;
+    }
+    .project-badge {
+        background: #FFC107 !important;
+        color: #000 !important;
+    }
+    .vertical-word {
+        color: #FFC107 !important;
+    }
+    input:focus, textarea:focus, select:focus {
+        border-color: #0066CC !important;
+        box-shadow: 0 0 0 2px rgba(0,102,204,0.2);
+    }
+    .select-wrapper::after {
+        color: #0066CC !important;
+    }
+    #news-feedback {
+        color: #0066CC !important;
+    }
+    .hero-title {
+        text-transform: none !important;
+    }
+    @media (max-width: 768px) {
+        .section-padding {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+        }
+        
+        .about-section,
+        .stats-section,
+        #projets,
+        .partners-section,
+        .why-us,
+        #contact,
+        #contact-cta {
+            margin-bottom: 20px !important;
+        }
+        
+        #contact {
+            padding: 40px 5% 30px 5% !important;
+        }
+        
+        .massive-year {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 20px 0 !important;
+            width: 100% !important;
+            position: relative !important;
+            left: auto !important;
+            right: auto !important;
+        }
+        
+        .massive-year .y-top,
+        .massive-year .y-bottom {
+            display: block !important;
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            font-size: 6rem !important;
+        }
+        
+        .vertical-tag-wrapper {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            left: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 15px !important;
+            flex-wrap: wrap !important;
+            margin-top: 20px !important;
+        }
+        
+        .vertical-word {
+            position: relative !important;
+            visibility: visible !important;
+            display: inline-block !important;
+            flex-direction: row !important;
+            font-size: 1rem !important;
+            letter-spacing: 2px !important;
+            white-space: nowrap !important;
+            opacity: 1 !important;
+            margin: 0 5px !important;
+        }
+    }
+    .hero-section .hero-content {
+        left: 2% !important;
+        width: 92% !important;
+        text-align: left !important;
+        transform: translateY(-50%) !important;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section .hero-content {
+            position: relative !important;
+            top: -80px !important;
+            transform: none !important;
+            left: 0 !important;
+            padding: 0 12px !important;
+            width: 100% !important;
+            text-align: left !important;
+            background: transparent !important;
+        }
+        
+        .hero-title {
+            margin-bottom: 8px !important;
+            line-height: 1.3 !important;
+        }
+        
+        .hero-subtitle {
+            margin-top: 5px !important;
+            margin-bottom: 0 !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .section-title {
+            margin-bottom: 12px !important;
+        }
+        .section-label {
+            margin-bottom: 10px !important;
+            margin-top: 0 !important;
+        }
+
+        .stats-container {
+            gap: 10px !important;
+            padding: 10px 5px !important;
+        }
+        .stat-card {
+            padding: 10px 5px !important;
+        }
+        .stat-number {
+            margin: 5px 0 !important;
+            font-size: 1.3rem !important;
+        }
+        .stat-icon {
+            font-size: 1.8rem !important;
+            margin-bottom: 5px !important;
+        }
+
+        .grid-2 {
+            gap: 20px !important;
+        }
+        .about-text p {
+            margin-bottom: 10px !important;
+        }
+        .massive-year {
+            padding: 10px 0 !important;
+        }
+        .vertical-tag-wrapper {
+            margin-top: 10px !important;
+            gap: 8px !important;
+        }
+
+        .why-grid {
+            gap: 30px !important;
+        }
+        .why-text-area .section-desc {
+            margin: 15px 0 !important;
+        }
+        .stats-row {
+            margin-top: 15px !important;
+            gap: 15px !important;
+        }
+        .why-cards-grid {
+            gap: 12px !important;
+        }
+        .why-card {
+            padding: 15px !important;
+        }
+        .card-icon {
+            margin-bottom: 10px !important;
+            font-size: 1.8rem !important;
+        }
+        .why-card h3 {
+            margin-bottom: 5px !important;
+            font-size: 1rem !important;
+        }
+        .why-card p {
+            font-size: 0.8rem !important;
+        }
+
+        .partners-section {
+            padding: 30px 0 !important;
+        }
+        .logos-slide img {
+            height: 35px !important;
+            margin: 0 15px !important;
+        }
+
+        #contact {
+            padding: 30px 5% 30px 5% !important;
+        }
+        #contact .footer-info h2 {
+            font-size: 2rem !important;
+            margin-bottom: 10px !important;
+        }
+        #contact .footer-info p {
+            margin-bottom: 20px !important;
+        }
+        #contact .contact-form-container form .form-group {
+            margin-bottom: 10px !important;
+        }
+        input, textarea, select {
+            padding: 10px !important;
+            margin-bottom: 12px !important;
+        }
+
+        #contact-cta {
+            padding-top: 0 !important;
+        }
+        .cta-wrapper {
+            padding: 15px !important;
+            gap: 20px !important;
+        }
+        .cta-content .section-title {
+            font-size: 1.6rem !important;
+            margin-bottom: 10px !important;
+        }
+        .cta-description {
+            margin: 10px 0 !important;
+            font-size: 0.9rem !important;
+        }
+        .cta-benefits {
+            margin-bottom: 15px !important;
+            gap: 5px !important;
+        }
+        .benefit-item {
+            font-size: 0.85rem !important;
+        }
+        .cta-actions {
+            margin-top: 15px !important;
+            gap: 10px !important;
+        }
+        .btn-primary, .btn-secondary-outline {
+            padding: 10px 15px !important;
+            font-size: 0.8rem !important;
+        }
+
+        .footer-section {
+            padding-top: 30px !important;
+        }
+        .footer-grid {
+            gap: 20px !important;
+        }
+        .footer-newsletter {
+            padding: 20px 0 !important;
+            margin-top: 20px !important;
+        }
+        .footer-about-cta {
+            margin-bottom: 20px !important;
+            padding-bottom: 15px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .about-section {
+            margin-top: -40px !important;
+            padding-top: 10px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .hero-section {
+            margin-bottom: -40px !important;
+        }
+        .about-section {
+            margin-top: -60px !important;
+            padding-top: 0 !important;
+        }
+        .about-section .container {
+            padding-top: 0 !important;
+        }
+        #contact-cta .section-title {
+        font-size: 1.2rem !important;   
+        line-height: 1.2 !important;
+    }
+    }
+    @media (max-width: 768px) {
+        .hero-section + section,
+        #about,
+        .about-section {
+            margin-top: -150px !important;
+            padding-top: 0 !important;
+        }
+    }
+
+    #projets {
+        padding-bottom: 20px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .why-us {
+        padding-bottom: 0 !important;
+        margin-bottom: -5px !important;
+    }
+
+    #contact {
+        padding-top: 40px !important;
+        margin-top: -1px !important;
+    }
+
+    .hero-section.mobile-desktop-mode {
+        height: 85vh !important;
+        min-height: 500px !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .hero-section.mobile-desktop-mode .hero-bg-container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .hero-section.mobile-desktop-mode .hero-bg {
+        object-fit: cover !important;
+        height: 100% !important;
+        width: 100% !important;
+        opacity: 1 !important;
+    }
+
+    .hero-section.mobile-desktop-mode .hero-content {
+        position: absolute !important;
+        top: 20% !important;
+        left: 5% !important;
+        transform: translateY(0) !important;
+        width: 90% !important;
+        text-align: left !important;
+        background: transparent !important;
+        z-index: 20 !important;
+        margin-top: 0 !important;
+    }
+    .about-section {
+        margin-bottom: 20px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .stats-section {
+        margin-top: 0px !important;
+        padding-top: 0 !important;
+    }
+    #projets .text-center {
+        margin-bottom: 40px !important;
+    }
+
+    .partners-section {
+        margin-top: 0 !important;
+    }
+
+    @media (min-width: 769px) and (pointer: fine) {
+        .hero-section {
+            margin-bottom: -15px !important;
+        }
+        .about-section {
+            margin-top: 10px !important;
+            padding-top: 100px !important;
+        }
+        
+        .about-text .section-title {
+            font-size: 1.5rem !important;
+            line-height: 1.2 !important;
+        }
+
+        .about-text p {
+            font-size: 1.2rem !important;
+            line-height: 1.7 !important;
+        }
+        
+        #projets .section-title {
+            font-size: 2rem !important;
+        }
+
+        #projets .project-title {
+            font-size: 1.2rem !important;
+            line-height: 1.3 !important;
+        }
+        .why-us {
+            padding-top: 20px !important;
+        }
+
+        
+        
+    }
+
+    #chat-header {
+        background: #0066CC !important;
+        color: #FFD700 !important;
+    }
+    .chat-message.user {
+        background: #0066CC;
+        color: white;
+    }
+    .chat-message.bot {
+        background: #ffffff;
+        color: #003366;
+    }
+    #send-chat {
+        background: #0066CC;
+        color: #FFD700;
+    }
+    #chat-trigger {
+        background: #0066CC;
+        color: #fffef8;
+    }
+
+@media (min-width: 769px) and (pointer: fine) {
+    body .why-us .why-text-area .section-title {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    body .why-us .why-text-area .section-desc {
+        font-size: 1.4rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    body .why-us .why-card p {
+        font-size: 1.2rem !important;
+        line-height: 1.5 !important;
+    }
+    #contact-cta {
+    margin-bottom: -100px !important;
+}
+.footer-section {
+    padding-top: 20px !important;
+}
+
+}
+#contact-cta .section-title {
+        font-size: 1.5rem !important;   
+        line-height: 1.2 !important;
+    }
+
+    .footer-newsletter #newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter #newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+    text-align: center; 
+}
+
+@media (max-width: 600px) {
+    .footer-newsletter #newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-newsletter #newsletter-form input {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-newsletter #newsletter-form button {
+        width: auto;
+        min-width: 200px;
+    }
+}
+.why-us {
+    margin-bottom: 60px !important;
+}
+
+#contact {
+    margin-top: 60px !important;
+}
+
+@media (max-width: 768px) {
+    .why-us {
+        margin-bottom: 40px !important;
+    }
+}
+@media (min-width: 769px) and (pointer: fine) {
+    #contact {
+        margin-bottom: -65px !important;
+    }
+}
+
+</style>
+</head>
+<body class="light-mode">
+    <div class="cursor-follower"></div>
+
+    <div class="header-wrapper">
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../">
+                        <img src="logo-bat-prefab.png" alt="Logo BAT & PREFAB entreprise construction préfabriquée" class="logo-img">
+
+                    </a>
+                </div>
+                
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="../a-propos/">À propos</a></li>
+                    <li><a href="/nos-services/">Nos services</a></li>
+                    <li><a href="/nos-realisations/">Réalisations</a></li>
+                    <li><a href="/catalogue/">Catalogue</a></li>
+                    <li><a href="../contact">Contact</a></li>
+                </ul>
+
+                <div class="header-social-icons">
+                    <a href="tel:+2250556121339" class="social-icon"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://wa.me/2250556121339" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:contact@batprefab.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/Batprefab.ci" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/bat-prefab" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="ticker-bar">
+            <button id="promo-trigger-btn" onclick="openPromo()">
+                <i class="fas fa-fire"></i> OFFRES SPÉCIALES
+            </button>
+            <div class="ticker-wrapper">
+                <div class="ticker-content">
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
+    <header class="hero-section" style="width: 100%; overflow: hidden; position: relative;">
+        <div class="hero-bg-container">
+           <img src="banniere/2.png" alt="Chantier construction modulaire BAT & PREFAB" class="hero-bg">
+<img src="banniere/3.png" alt="Réalisation bâtiment industriel préfabriqué" class="hero-bg">
+<img src="banniere/4.png" alt="Projet de construction préfabriquée en Côte d'Ivoire" class="hero-bg">
+<img src="banniere/5.png" alt="Chantier de bâtiment modulaire clés en main" class="hero-bg">
+<img src="banniere/6.png" alt="Structure acier béton BAT & PREFAB" class="hero-bg">
+        </div>
+        <div class="overlay-dark"></div>
+        
+        <div class="hero-content container">
+           <h1 class="hero-title overflow-hidden">
+    <span class="anim-text">Le préfabriqué,</span>
+    <span class="anim-text">plus qu'une construction,</span>
+    <span class="anim-text highlight">une innovation.</span>
+</h1>
+            <p class="hero-subtitle">Leader du préfabriqué en Côte d’Ivoire.</p>
+            
+        </div>
+    </header>
+
+    <section id="about" class="about-section section-padding reveal">
+        <div class="container grid-2">
+            <div class="about-text scroll-trigger-anim">
+                <h4 class="section-label">Qui sommes-nous ?</h4>
+                <h2 class="section-title">L’entreprise <br>Bat & Prefab</h2>
+                
+                <div class="content-wrapper">
+                    <p class="mb-4">
+                        a été fondée en 2018, dynamique, née d'une véritable passion 
+                        pour la conception et la réalisation de bâtiments en général et des préfabriqués 
+                        en particulier dont nous en avons fait une priorité.
+                    </p>
+                    <p class="mb-4">
+                        Notre savoir-faire et nos compétences reposent sur un bureau d'études, nos 
+                        compétences terrain et un personnel expérimenté et motivé dont les membres sont 
+                        issus de différents domaines d’activités.
+                    </p>
+                    <p class="mb-4">
+                        La ressource humaine constitue l’un des atouts majeurs de la structure, car chaque 
+                        employé a été recruté parmi les meilleurs de son domaine et selon des critères objectifs.
+                    </p>
+                    <p class="mb-4">
+                        Nos partenaires et la qualité des matériaux utilisés sur nos différents chantiers 
+                        sont également un pan important à souligner. Le faisant Bat & Prefab fait 
+                        de l’excellence son credo et son compagnon de toutes prestations.
+                    </p>
+                    <p class="mt-6 font-semibold border-l-4 border-primary pl-4">
+                        Quel que soit votre projet, l’entreprise Bat & Prefab vous accompagne, identifie 
+                        l'ensemble de vos besoins et vous propose des prestations en Bâtiments ou 
+                        bâtiments personnalisés répondant à votre attente (qu’ils soient préfabriqués, 
+                        modulaires ou traditionnels c’est-à-dire en dur).
+                    </p>
+                </div>
+            </div>
+
+            <div class="massive-year reveal">
+                <span class="y-top">20</span>
+                <span class="y-bottom" id="counter-year">18</span>
+                <div class="vertical-tag-wrapper">
+                    <div class="vertical-word">INNOVATION</div>
+                    <div class="vertical-word">EXPERTISE</div>
+                    <div class="vertical-word">CONCEPTION</div>
+                    <div class="vertical-word">STRUCTURE</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-city stat-icon"></i>
+                <h3 class="stat-number" data-target="211">0</h3>
+                <p>Projets Réalisés</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-globe-africa stat-icon"></i>
+                <h3 class="stat-number" data-target="5">0</h3>
+                <p>Pays d'Intervention</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-hard-hat stat-icon"></i>
+                <h3 class="stat-number" data-target="16">0</h3>
+                <p>Experts à votre service</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-home stat-icon"></i>
+                <h3 class="stat-number" data-target="517">0</h3>
+                <p>Bungalows Livrés</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" style="background-color: #ffffff;" class="section-padding">
+        <div class="container">
+            <span class="section-label text-center" style="color: #666;">QUELQUES RÉALISATIONS</span>
+            <h2 class="section-title text-center" style="color: #111;">NOS DERNIERS <span class="highlight">PROJETS</span></h2>
+            
+            <div class="swiper projects-swiper" style="padding: 20px 0 50px;">
+                <div id="projects-container" class="swiper-wrapper">
+                    <div class="swiper-slide text-center">Chargement des projets...</div>
+                </div>
+                <div class="swiper-button-next" style="color: #0066CC;"></div>
+                <div class="swiper-button-prev" style="color: #0066CC;"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="text-center" style="margin-top: 60px;">
+    <a href="/nos-realisations/" class="btn-primary">VOIR PLUS DE RÉALISATIONS</a>
+</div>
+        </div>
+    </section>
+
+    <section class="partners-section reveal">
+        <div class="container">
+            <h4 class="section-label" style="text-align: center; margin-bottom: 40px;">ILS NOUS FONT CONFIANCE</h4>
+            <div class="logos-wrapper">
+                <div class="logos-slide">
+                    <img src="logo/logo1.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo2.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo3.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo4.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo5.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo6.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo7.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo8.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo9.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo10.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img2.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img3.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img4.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img5.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img6.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img7.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img8.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img9.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img10.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img11.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img12.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img13.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img14.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img15.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l1.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l2.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l3.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l4.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l5.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l6.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l7.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l8.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l9.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l10.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l11.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l12.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l13.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l14.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l16.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l17.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l18.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l19.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l20.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l21.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l22.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l23.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l24.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l25.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l26.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l27.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l28.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l27-2.jpg" alt="Logo partenaire Bat & Prefab">
+
+
+
+                </div>
+                <div class="logos-slide">
+                    <img src="logo/logo1.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo2.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo3.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo4.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo5.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo6.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo7.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo8.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo9.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/logo10.jpeg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img2.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img3.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img4.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img5.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img6.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img7.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img8.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img9.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img10.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img11.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img12.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img13.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img14.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/img15.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l1.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l2.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l3.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l4.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l5.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l6.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l7.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l8.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l9.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l10.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l11.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l12.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l13.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l14.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l16.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l17.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l18.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l19.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l20.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l21.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l22.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l23.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l24.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l25.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l26.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l27.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l28.jpg" alt="Logo partenaire Bat & Prefab">
+                    <img src="logo/l27-2.jpg" alt="Logo partenaire Bat & Prefab">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us section-padding" style="background-color: var(--bg-color); border-top: 1px solid var(--line-color);">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-text-area reveal">
+                    <span class="section-label">POURQUOI BAT & PREFAB ?</span>
+                    <h2 class="section-title">CONSTRUIRE AVEC <span class="highlight">PRÉCISION</span> & DURABILITÉ</h2>
+                    <p class="section-desc">
+                        Nous transformons vos visions industrielles en réalités concrètes. Grâce à notre maîtrise de l'acier et du béton, nous garantissons des structures conçues pour durer.
+                    </p>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="8"></span>
+                            <span class="stat-label">ANNÉES D'EXPÉRIENCE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-cards-grid">
+                    <div class="why-card reveal-delay-1">
+                        <i class="fas fa-industry card-icon"></i>
+                        <h3>INNOVATION TECHNIQUE</h3>
+                        <p>Utilisation des dernières technologies de préfabrication pour optimiser les coûts et les délais.</p>
+                    </div>
+                    <div class="why-card highlight-card reveal-delay-2">
+                        <i class="fas fa-stopwatch card-icon"></i>
+                        <h3>DÉLAIS MAÎTRISÉS</h3>
+                        <p>La préfabrication en usine nous permet de diviser par deux le temps d'installation sur site.</p>
+                    </div>
+                    <div class="why-card reveal-delay-3">
+                        <i class="fas fa-award card-icon"></i>
+                        <h3>QUALITÉ CERTIFIÉE</h3>
+                        <p>Chaque structure répond aux normes internationales de sécurité et de résistance sismique.</p>
+                    </div>
+                    <div class="why-card reveal-delay-4">
+                        <i class="fas fa-globe-africa card-icon"></i>
+                        <h3>PRÉSENCE RÉGIONALE</h3>
+                        <p>Un accompagnement de proximité en Côte d'Ivoire, au Togo, au Burkina et au Cameroun.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="footer-section reveal" style="padding: 100px 10% 50px 10%; background: var(--bg-color); border-top: 1px solid var(--line-color);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
+            <div class="footer-info">
+                <h2 style="font-family: var(--font-heading); font-size: 3rem; color: #0066CC; margin-bottom: 20px;">PARLONS DE<br>VOTRE PROJET.</h2>
+                <p style="margin-bottom: 40px; opacity: 0.8; max-width: 400px;">
+                    Que ce soit pour une base-vie isolée ou un complexe industriel, notre bureau d'études transforme vos contraintes en solutions modulaires.
+                </p>
+            </div>
+            <div class="contact-form-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-nom" placeholder="VOTRE NOM COMPLET" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" placeholder="VOTRE EMAIL" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="contact-tel" placeholder="VOTRE NUMÉRO DE TÉLÉPHONE" required>
+                    </div>
+                    <div class="form-group select-wrapper">
+                        <select id="contact-category" required>
+                            <option value="" disabled selected>QUEL SERVICE VOUS INTÉRESSE ?</option>
+                            <option value="soudure">SOUDURE</option>
+                            <option value="prefabriques">PRÉFABRIQUÉS</option>
+                            <option value="carrelage">CARRELAGE</option>
+                            <option value="plomberie">PLOMBERIE</option>
+                            <option value="batiment">BÂTIMENT</option>
+                            <option value="climatisation">CLIMATISATION</option>
+                            <option value="peinture">PEINTURE</option>
+                            <option value="grands-ouvrages">GRANDS OUVRAGES</option>
+                            <option value="plans">PLANS 2D ET 3D</option>
+                            <option value="vitrerie">VITRERIE</option>
+                            <option value="electricite">ELECTRICITÉ</option>
+                            <option value="chauffage">CHAUFFAGE</option>
+                            <option value="autres">AUTRES</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" placeholder="VOTRE MESSAGE" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">ENVOYER LE MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-cta" class="cta-section section-padding reveal" style="padding-top: 20px !important;">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="cta-image-container scroll-trigger-anim">
+                    <!-- Déjà présente -->
+<img src="banniere/WhatsApp Image 2026-03-09 at 22.47.41.jpeg" alt="Construction modulaire Bat & Prefab sur chantier" class="cta-main-img">
+                                 <div class="cta-experience-badge">
+                          <img src="logo-bat-prefab.png" alt="Logo mini BAT & PREFAB" class="cta-logo-mini">
+
+                    </div>
+                </div>
+                <div class="cta-content scroll-trigger-anim">
+                    <h4 class="section-label">VOTRE PROJET, NOTRE EXPERTISE</h4>
+                    <h2 class="section-title">CONSTRUISEZ <span class="highlight">L'AVENIR</span> AVEC LE LEADER IVOIRIEN</h2>
+                    <p class="cta-description">
+                        Du logement modulaire aux infrastructures industrielles complexes, <strong>Bat & Prefab</strong> transforme vos visions en réalités durables. Alliez rapidité d'exécution, innovation technologique et excellence opérationnelle pour tous vos besoins en BTP en Côte d'Ivoire.
+                    </p>
+                    <div class="cta-benefits">
+                        <div class="benefit-item"><span>✓</span> Rapidité de construction</div>
+                        <div class="benefit-item"><span>✓</span> Standards internationaux</div>
+                        <div class="benefit-item"><span>✓</span> Solutions sur mesure</div>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="/contact" class="btn-primary">DEMANDER UN DEVIS GRATUIT</a>
+                        <a href="tel:+2252721399717" class="btn-secondary-outline">NOUS APPELER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="nos-contact" class="footer-section reveal">
+        <div class="container">
+            <div class="footer-grid reveal-delay-1">
+                <div class="footer-col col-left">
+                    <h2 class="footer-title">DÉMARRONS<br>VOTRE PROJET</h2>
+                    <p class="footer-tagline">L'expertise de l'acier et du béton.</p>
+                    <div class="social-wrapper">
+                        <h4 class="social-label">SUIVEZ-NOUS</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/bat-prefab" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/Batprefab.ci" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.goafricaonline.com/ci/581881-batprefab-construction-abidjan-cote-ivoire" target="_blank"><i class="fas fa-globe-africa"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col col-center">
+                    <h4 class="social-label">SIÈGE / CÔTE D'IVOIRE</h4>
+                    <div class="footer-contact-item" style="margin-bottom: 15px;">
+                        <i class="fas fa-envelope highlight"></i>
+                        <a href="mailto:contact@batprefab.com">contact@batprefab.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+2250556121339">+225 05 56 12 13 39</a>
+                        <a href="https://wa.me/2250556121339" style="margin-left: 10px;" title="Discuter sur WhatsApp">
+                            <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+2250789855251">+225 07 89 85 52 51</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt highlight"></i>
+                        <a href="tel:+2252721399717">+225 27 21 39 97 17</a>
+                    </div>
+                </div>
+                <div class="footer-col col-right">
+                    <h4 class="social-label">INTERNATIONAL</h4>
+                    <div style="margin-bottom: 5px; font-weight: bold; color: #0066CC; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Burkina Faso</div>
+                    <div class="footer-contact-item" style="margin-bottom: 15px; justify-content: flex-end;">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+22675240800">+226 75 24 08 00</a>
+                    </div>
+                    <div style="margin-bottom: 5px; font-weight: bold; color: #0066CC; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Togo</div>
+                    <div class="footer-contact-item" style="margin-bottom: 15px; justify-content: flex-end;">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+22897106363">+228 97 10 63 63</a>
+                    </div>
+                    <div style="margin-bottom: 5px; font-weight: bold; color: #0066CC; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Cameroun</div>
+                    <div class="footer-contact-item" style="justify-content: flex-end;">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+237677554561">+237 6 77 55 45 61</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter" style="border-top: 1px solid var(--line-color); padding: 40px 0; margin-top: 40px; text-align: center;">
+                <h4 style="font-family: var(--font-heading); color: #0066CC; margin-bottom: 15px;">RESTEZ INFORMÉ</h4>
+                <p style="margin-bottom: 20px; opacity: 0.8; font-size: 0.9rem;">Recevez nos dernières réalisations et offres exclusives.</p>
+                <form id="newsletter-form" style="display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                    <input type="email" id="news-email" placeholder="VOTRE EMAIL" required style="flex: 1; padding: 12px; background: #111; border: 1px solid #333; color: white; min-width: 250px;">
+                    <button type="submit" class="btn-plans-trigger" style="border:none; padding: 12px 25px;">S'ABONNER</button>
+                </form>
+                <p id="news-feedback" style="color: #0066CC; margin-top: 10px; font-size: 0.8rem; display: none;"></p>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-about-cta" style="margin-bottom: 40px; border-bottom: 1px solid var(--line-color); padding-bottom: 30px;">
+                    <h4 style="font-family: var(--font-heading); color: #0066CC; margin-bottom: 10px;">VOUS VOULEZ EN SAVOIR PLUS ?</h4>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Découvrez notre histoire, nos valeurs et notre manifeste pour l'architecture ivoirienne.</p>
+                    <a href="/a-propos/" class="btn-plans-trigger" style="text-decoration: none; display: inline-block; padding: 12px 30px;">
+                        En savoir plus sur Nous <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    © <span id="current-year">2026</span> BAT & PREFAB.
+                    <span style="margin-left: 10px;">Tous droits réservés.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="project-lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lb-img" src="" alt="">
+            <video id="lb-vid" controls loop></video>
+        </div>
+        <button id="lb-prev" class="lb-nav-btn"><i class="fas fa-chevron-left"></i></button>
+        <button id="lb-next" class="lb-nav-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div id="service-lightbox" class="service-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:100000; justify-content:center; align-items:center;">
+        <div class="service-lightbox-content" style="background:white; color:#333; padding:40px; border-radius:15px; width:90%; max-width:500px; position:relative;">
+            <span class="close-service-lightbox" onclick="closeServiceLightbox()" style="position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer;">&times;</span>
+            <h2 id="sl-title" style="font-family:'Oswald'; color:#111; border-bottom:3px solid #FFC107; margin-bottom:20px;"></h2>
+            <div id="sl-body"></div>
+        </div>
+    </div>
+
+    <div id="chat-widget">
+        <div id="chat-header" color="white" style="display:flex; justify-content:space-between; align-items:center; padding:15px; background:#0066CC;">
+            <span>ASSISTANCE BAT & PREFAB</span>
+            <button id="close-chat" style="color:white; background:none; border:none; cursor:pointer;">&times;</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Message...">
+            <button id="send-chat"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div id="chat-invite" class="chat-invite">
+    <span class="invite-text">💬 Je vous mets en contact avec l'assistance !</span>
+    <button class="close-invite" aria-label="Fermer">&times;</button>
+</div>
+    <button id="chat-trigger">
+        <i class="fas fa-comment-dots"></i>
+        <span id="chat-badge" style="display: none;"></span>
+    </button>
+
+    <div id="promo-overlay" class="promo-overlay">
+        <div class="promo-modal">
+            <span class="promo-close" onclick="closePromo()">&times;</span>
+            <div id="promo-body"></div>
+        </div>
+    </div>
+
+
+    <script>
+        (function() {
+    function isMobileInDesktopMode() {
+        var isMobileUA = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        var isWide = window.innerWidth >= 768;
+        return isMobileUA && isWide;
+    }
+
+    function fixHeroForMobileDesktop() {
+        var hero = document.querySelector('.hero-section');
+        if (!hero) return;
+
+        if (isMobileInDesktopMode()) {
+            hero.style.height = '85vh';
+            hero.style.minHeight = '500px';
+            hero.style.position = 'relative';
+            hero.style.overflow = 'hidden';
+
+            var bgContainer = hero.querySelector('.hero-bg-container');
+            if (bgContainer) {
+                bgContainer.style.position = 'absolute';
+                bgContainer.style.top = '0';
+                bgContainer.style.left = '0';
+                bgContainer.style.width = '100%';
+                bgContainer.style.height = '100%';
+            }
+
+            var images = hero.querySelectorAll('.hero-bg');
+            images.forEach(function(img) {
+                img.style.objectFit = 'cover';
+                img.style.height = '100%';
+                img.style.width = '100%';
+            });
+
+            var content = hero.querySelector('.hero-content');
+            if (content) {
+                content.style.position = 'absolute';
+                content.style.top = '30%';        
+                content.style.left = '5%';
+                content.style.transform = 'translateY(-50%)';
+                content.style.width = '90%';
+                content.style.textAlign = 'left';
+                content.style.background = 'transparent';
+                content.style.zIndex = '20';
+            }
+        } else {
+            hero.style.cssText = '';
+            if (bgContainer) bgContainer.style.cssText = '';
+            images.forEach(img => img.style.cssText = '');
+            if (content) content.style.cssText = '';
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', fixHeroForMobileDesktop);
+    window.addEventListener('resize', fixHeroForMobileDesktop);
+})();
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            const swiperContainer = document.querySelector('.projects-swiper');
+            if (swiperContainer && swiperContainer.swiper) {
+                const swiper = swiperContainer.swiper;
+                swiper.params.autoplay = {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                };
+                swiper.autoplay.start();
+            } else {
+                new Swiper('.projects-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true, 
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        640: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }
+                });
+            }
+        }, 500); 
+    });
+
+   (function() {
+    const invite = document.getElementById('chat-invite');
+    const chatBtn = document.getElementById('chat-trigger');
+    const closeInvite = invite?.querySelector('.close-invite');
+
+    if (invite) {
+        setTimeout(() => {
+            invite.classList.add('show');
+        }, 2000);
+    }
+
+    if (closeInvite) {
+        closeInvite.addEventListener('click', (e) => {
+            e.stopPropagation();
+            invite.classList.remove('show');
+        });
+    }
+
+    if (chatBtn) {
+        chatBtn.addEventListener('click', () => {
+            if (invite) invite.classList.remove('show');
+        });
+    }
+})();
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

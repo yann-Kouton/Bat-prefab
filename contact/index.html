@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Balises SEO principales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Contactez BAT & PREFAB | Devis construction préfabriquée en Côte d'Ivoire</title>
+    <meta name="description" content="Contactez BAT & PREFAB, leader de la construction préfabriquée et modulaire en Côte d'Ivoire. Demande de devis, renseignements sur nos services, bâtiments industriels et modulaires.">
+    <meta name="keywords" content="contact construction préfabriquée, devis bâtiment modulaire, joindre BAT & PREFAB, Abidjan construction, demande d'information BTP">
+    <meta name="author" content="BAT & PREFAB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.batprefab.com/contact/">
+    <link rel="alternate" hreflang="fr" href="https://www.batprefab.com/contact/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.batprefab.com/contact/">
+    <meta property="og:title" content="Contactez BAT & PREFAB – Expertise construction préfabriquée">
+    <meta property="og:description" content="Une équipe d'experts à votre écoute pour concrétiser vos projets industriels, modulaires et préfabriqués. Devis gratuit et accompagnement personnalisé.">
+    <meta property="og:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    <meta property="og:image:alt" content="Logo BAT & PREFAB – Contactez-nous">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="BAT & PREFAB">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | BAT & PREFAB – Construction modulaire">
+    <meta name="twitter:description" content="Demandez votre devis ou des informations sur nos services de bâtiments préfabriqués et industriels.">
+    <meta name="twitter:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    
+    <!-- Données structurées (ContactPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contactez BAT & PREFAB",
+      "description": "Page de contact pour demander un devis ou obtenir des informations sur les constructions préfabriquées et modulaires en Afrique de l'Ouest.",
+      "url": "https://www.batprefab.com/contact/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "BAT & PREFAB",
+        "url": "https://www.batprefab.com",
+        "logo": "https://www.batprefab.com/logo-bat-prefab.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Koumassi, bd du Gabon",
+          "addressLocality": "Abidjan",
+          "addressCountry": "Côte d'Ivoire"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+2250556121339",
+            "contactType": "customer service",
+            "availableLanguage": "French"
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+2252721399717",
+            "contactType": "sales",
+            "availableLanguage": "French"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/Batprefab.ci",
+          "https://www.linkedin.com/company/bat-prefab",
+          "https://wa.me/2250556121339"
+        ]
+      },
+      "potentialAction": {
+        "@type": "CommunicateAction",
+        "name": "Envoyer un message",
+        "description": "Formulaire de contact pour toute demande de devis ou d'information.",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.batprefab.com/contact/#contact-form",
+          "inLanguage": "fr",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
+      }
+    }
+    </script>
+    
+    <!-- Scripts et liens existants (conservés) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+
+    <style>
+        /* OVERRIDES POUR LA PAGE CONTACT (MODE CLAIR) */
+        :root {
+            --bg-color: #FFFFFF !important;
+            --text-color: #111111 !important;
+            --line-color: rgba(0, 0, 0, 0.1) !important;
+            --surface-color: #F9F9F9 !important;
+        }
+
+        body {
+            background-color: var(--bg-color) !important;
+            color: var(--text-color) !important;
+        }
+
+        .contact-main-section {
+            padding: 100px 0;
+        }
+        .contact-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            line-height: 0.9;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .info-box {
+            background: #f9f9f9;
+            padding: 30px;
+            border: 1px solid #eee;
+        }
+
+        .info-box h3 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+        
+        .page-banner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('../votre-image-de-fond.jpg') center/cover no-repeat;
+            background-color: #222;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .banner-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .banner-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 300;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+
+        /* ===== EN-TÊTE UNIFIÉ ===== */
+        .header-wrapper {
+            background: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            padding: 0 5%;
+            height: 70px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            justify-self: start;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            justify-self: center;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            text-transform: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            color: #000 !important;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition-slow);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .btn-contact {
+            padding: 8px 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color) !important;
+            font-size: 12px;
+            transition: var(--transition-fast);
+            text-transform: none;
+        }
+
+        .btn-contact:hover {
+            background: var(--accent-color);
+            color: #000 !important;
+        }
+
+        .header-social-icons {
+            justify-self: end;
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-social-icons .social-icon {
+            color: #0066CC;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .header-social-icons .social-icon:hover {
+            color: #004499;
+        }
+
+        .contact-bar {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #000;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+            }
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            .nav-links.nav-active {
+                display: flex;
+            }
+            .header-social-icons {
+                display: flex;
+                gap: 10px;
+                margin-right: 10px;
+            }
+            .menu-toggle {
+                display: block;
+                order: 2;
+            }
+            .logo {
+                order: 1;
+            }
+            .header-social-icons {
+                order: 3;
+            }
+        }
+
+        /* Réduction des titres sur la page Contact */
+
+/* 1. Titre "TRAVAILLONS ENSEMBLE" */
+.contact-title {
+    font-size:2rem !important; /* réduit par rapport à 5rem */
+}
+
+/* 2. Titre "NOTRE SIÈGE À ABIDJAN" */
+#map-location .section-title {
+    font-size: 1.5rem !important; /* valeur par défaut ~2.5rem */
+}
+    </style>
+</head>
+<body class="light-mode">
+    <div class="cursor-follower"></div>
+
+    <div class="header-wrapper">
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../">
+                        <img src="../logo-bat-prefab.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="../">Accueil</a></li>
+                    <li><a href="../a-propos/">À propos</a></li>
+                    <li><a href="../nos-services/">Nos services</a></li>
+                    <li><a href="../nos-realisations/">Réalisations</a></li>
+                    <li><a href="../catalogue/">Catalogue</a></li>
+                </ul>
+
+                <div class="header-social-icons">
+                    <a href="tel:+2250556121339" class="social-icon"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://wa.me/2250556121339" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:contact@batprefab.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/Batprefab.ci" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/bat-prefab" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="ticker-bar">
+            <button id="promo-trigger-btn" onclick="openPromo()">
+                <i class="fas fa-fire"></i> OFFRES SPÉCIALES
+            </button>
+            <div class="ticker-wrapper">
+                <div class="ticker-content">
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-banner">
+        <h1 class="banner-title">CONTACTEZ-NOUS</h1>
+        <p class="banner-subtitle">Une équipe d'experts à votre écoute pour concrétiser vos projets industriels.</p>
+    </section>
+
+    <main class="container contact-main-section reveal">
+        <h1 class="contact-title">TRAVAILLONS<br><span style="color: var(--accent-color);">ENSEMBLE</span></h1>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
+            <div>
+                <div class="info-box">
+                    <h3>SIÈGE SOCIAL</h3>
+                    <p style="margin-bottom: 10px;"><strong>Email:</strong> contact@batprefab.com</p>
+                    <p style="margin-bottom: 10px;"><strong>Fixe:</strong> +225 27 21 39 97 17</p>
+                    <p><strong>WhatsApp:</strong> +225 05 56 12 13 39</p>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px; background: transparent;">
+                    <h3 style="font-size: 1rem; opacity: 0.7;">NOS ANTENNES</h3>
+                    <p>Burkina Faso : +226 75 24 08 00</p>
+                    <p>Togo : +228 97 10 63 63</p>
+                    <p>Cameroun : +237 6 77 55 45 61</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-nom" placeholder="VOTRE NOM COMPLET" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" placeholder="VOTRE EMAIL" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="contact-tel" placeholder="VOTRE NUMÉRO DE TÉLÉPHONE" required>
+                    </div>
+                    <div class="form-group select-wrapper">
+                        <select id="contact-category" required>
+                            <option value="" disabled selected>QUEL SERVICE VOUS INTÉRESSE ?</option>
+                            <option value="soudure">SOUDURE</option>
+                            <option value="prefabriques">PRÉFABRIQUÉS</option>
+                            <option value="carrelage">CARRELAGE</option>
+                            <option value="plomberie">PLOMBERIE</option>
+                            <option value="batiment">BÂTIMENT</option>
+                            <option value="climatisation">CLIMATISATION</option>
+                            <option value="peinture">PEINTURE</option>
+                            <option value="grands-ouvrages">GRANDS OUVRAGES</option>
+                            <option value="plans">PLANS 2D ET 3D</option>
+                            <option value="vitrerie">VITRERIE</option>
+                            <option value="electricite">ELECTRICITÉ</option>
+                            <option value="chauffage">CHAUFFAGE</option>
+                            <option value="autres">AUTRES</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" placeholder="VOTRE MESSAGE" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">ENVOYER LE MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <section id="map-location" class="section-padding reveal" style="padding-bottom: 50px;">
+        <div class="container">
+            <div class="text-center mb-10">
+                <h4 class="section-label">OÙ NOUS TROUVER ?</h4>
+                <h2 class="section-title">NOTRE SIÈGE À ABIDJAN</h2>
+            </div>
+            
+            <div class="map-container" style="width: 100%; height: 450px; border: 1px solid var(--line-color); border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.8032191376924!2d-3.9734701!3d5.2933767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1efb0957bb7f3%3A0x16a1cd38ac93d0d3!2sBAT%20%26%20PREFAB!5e0!3m2!1sfr!2sci!4v1768734818413!5m2!1sfr!2sci" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: grayscale(100%) invert(90%) contrast(90%); transition: all 0.6s ease; display: block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    onmouseover="this.style.filter='grayscale(0%) invert(0%)'"
+                    onmouseout="this.style.filter='grayscale(100%) invert(90%) contrast(90%)'">
+                </iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 25px; opacity: 0.9; font-family: var(--font-heading);">
+                <p><i class="fas fa-map-marker-alt" style="color: var(--accent-color); margin-right: 10px;"></i> 
+                   Abidjan, Côte d'Ivoire — Koumassi, bd du Gabon.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="promo-overlay" class="promo-overlay">
+        <div class="promo-modal">
+            <span class="promo-close" onclick="closePromo()">&times;</span>
+            <div id="promo-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Fonctions pour la promo
+        window.openPromo = function() {
+            const overlay = document.getElementById('promo-overlay');
+            if (overlay) overlay.style.display = 'flex';
+        };
+        window.closePromo = function() {
+            const overlay = document.getElementById('promo-overlay');
+            if (overlay) overlay.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

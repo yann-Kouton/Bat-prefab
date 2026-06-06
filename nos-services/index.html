@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <head>
+    <!-- Balises SEO principales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Nos services | BAT & PREFAB – Construction préfabriquée, modulaire & industrielle</title>
+    <meta name="description" content="Découvrez tous les services BAT & PREFAB : bâtiments préfabriqués, finitions (carrelage, peinture), électricité, plomberie, climatisation, plans 2D/3D et grands ouvrages en Côte d'Ivoire.">
+    <meta name="keywords" content="services construction préfabriquée Côte d'Ivoire, bâtiment modulaire, finitions BTP, électricité bâtiment, plomberie, climatisation, plans 2D 3B, BAT & PREFAB services">
+    <meta name="author" content="BAT & PREFAB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.batprefab.com/nos-services/">
+    <link rel="alternate" hreflang="fr" href="https://www.batprefab.com/nos-services/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.batprefab.com/nos-services/">
+    <meta property="og:title" content="Nos services | BAT & PREFAB – Expert en construction préfabriquée">
+    <meta property="og:description" content="De la conception à la réalisation : préfabriqué, électricité, plomberie, climatisation, carrelage, plans 2D/3D. Solutions clés en main en Côte d'Ivoire.">
+    <meta property="og:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    <meta property="og:image:alt" content="Logo BAT & PREFAB services construction">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="BAT & PREFAB">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nos services | BAT & PREFAB – Construction modulaire">
+    <meta name="twitter:description" content="Préfabriqué, finitions, électricité, plomberie, climatisation, plans 2D/3D. Devis gratuit et accompagnement sur mesure.">
+    <meta name="twitter:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    
+    <!-- Données structurées (Service) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Construction préfabriquée et services BTP",
+      "provider": {
+        "@type": "Organization",
+        "name": "BAT & PREFAB",
+        "url": "https://www.batprefab.com"
+      },
+      "areaServed": ["Côte d'Ivoire", "Togo", "Burkina Faso", "Cameroun"],
+      "description": "BAT & PREFAB propose des prestations complètes : bâtiments préfabriqués, modulaires, traditionnels, ainsi que les finitions (carrelage, peinture), l'électricité, la plomberie, la climatisation, la vitrerie, la soudure et l'étude de plans 2D/3D.",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "XOF",
+          "description": "Devis gratuit sur mesure"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services BAT & PREFAB",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Préfabriqués modulaires",
+              "description": "Bâtiments clés en main, rapides à installer"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Finitions (carrelage, peinture)",
+              "description": "Travaux de finition intérieure et extérieure"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Électricité & plomberie",
+              "description": "Installations électriques et sanitaires complètes"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Climatisation & chauffage",
+              "description": "Solutions de confort thermique"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plans 2D et 3D",
+              "description": "Études architecturales et conception"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Scripts et liens existants (conservés) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <style>
+   
+
+        body, .services-main, .accordion-wrapper, .service-details-inline, 
+        .inner-grid-container, .service-block-wrapper {
+            background: #ffffff !important;
+        }
+
+        .inner-grid-container {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .service-details-inline[style*="height: 0"] .inner-grid-container {
+            display: none !important;
+        }
+
+        .service-card.inline-card {
+            background: #ffffff !important;
+            border: 1px solid #eee !important;
+            border-radius: 12px !important;
+            padding: 25px !important;
+            height: 320px !important; 
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .service-card h3 {
+            color: #D4AF37 !important;
+            font-size: 1.4rem !important;
+            margin-bottom: 15px !important;
+            height: 3.2em !important; 
+            overflow: hidden !important;
+        }
+
+        .card-visible-desc, .card-preview-desc, .service-card p {
+            color: #333333 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.5 !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3 !important;
+            -webkit-box-orient: vertical !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            margin-bottom: 20px !important;
+        }
+
+        .service-lightbox { 
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .svc-lb-content {
+            background: #ffffff !important;
+            max-width: 95vw !important;
+            width: 1200px !important;
+            height: 85vh !important;
+            border: none !important;
+            display: block !important;
+            overflow: hidden !important;
+            position: relative !important;
+        }
+
+        .svc-lb-grid { 
+            display: flex !important; 
+            height: 100% !important; 
+            width: 100% !important;
+        }
+
+        .svc-lb-image-side { 
+            flex: 0 0 55% !important; 
+            height: 100% !important; 
+            background: #000 !important;
+        }
+        .svc-lb-image-side img { 
+            width: 100% !important; 
+            height: 100% !important; 
+            object-fit: cover !important; 
+        }
+
+        .svc-lb-text-side {
+            flex: 0 0 45% !important;
+            padding: 60px 40px !important;
+            overflow-y: auto !important;
+            background: #ffffff !important;
+            display: block !important;
+            height: 100% !important;
+        }
+
+        #svc-lb-text-custom h2 {
+            color: #D4AF37 !important;
+            font-family: 'Oswald', sans-serif !important;
+            font-size: 2.2rem !important;
+            margin-bottom: 20px !important;
+            display: block !important;
+        }
+
+        #svc-lb-text-custom div, 
+        #svc-lb-text-custom p, 
+        #svc-lb-text-custom {
+            color: #1a1a1a !important;
+            font-size: 1.05rem !important;
+            line-height: 1.8 !important;
+            display: block !important;
+            -webkit-line-clamp: unset !important;
+        }
+
+        .acc-item::before {
+            display: none !important;
+            background: none !important;
+        }
+
+        .acc-title-vertical {
+            color: #FFC107 !important;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8) !important;
+        }
+
+        .svc-lb-close-btn {
+            position: fixed !important; 
+            top: 30px !important; 
+            right: 30px !important; 
+            z-index: 9999 !important; 
+            background: #D4AF37 !important; 
+            color: #ffffff !important; 
+            border: none !important;
+            border-radius: 50% !important; 
+            width: 50px !important; 
+            height: 50px !important;
+            display: flex !important; 
+            align-items: center !important; 
+            justify-content: center !important;
+            cursor: pointer !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+            transition: transform 0.3s ease !important;
+        }
+
+        .svc-lb-close-btn:hover {
+            transform: scale(1.1) !important;
+            background: #000000 !important; 
+        }
+        .svc-lb-close-btn i {
+            font-size: 24px !important;
+            pointer-events: none !important;
+        }
+
+        @media (max-width: 992px) {
+            .svc-lb-grid { flex-direction: column !important; }
+            .svc-lb-image-side { flex: 0 0 40% !important; }
+            .service-card.inline-card { height: auto !important; min-height: 280px !important; }
+        }
+
+        .services-hero {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 60px;
+            margin-top: 70px;
+        }
+
+        .services-hero .hero-bg {
+            background-image: url('/banniere/fondation_du_btp_cover.jpg'); 
+            opacity: 1;
+            transform: scale(1.1);
+            z-index: 1;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .services-hero .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-hero .hero-content h1 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--accent-color); 
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .services-hero .hero-content p {
+            color: #FFC107; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-wrapper {
+            background: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            padding: 0 5%;
+            height: 70px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo { justify-self: start; }
+        .logo-img { height: 50px; width: auto; }
+        .nav-links {
+            justify-self: center;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li a {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            text-transform: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            color: #000 !important;
+        }
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition-slow);
+        }
+        .nav-links li a:hover::after { width: 100%; }
+        .btn-contact {
+            padding: 8px 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color) !important;
+            font-size: 12px;
+            transition: var(--transition-fast);
+            text-transform: none;
+        }
+        .btn-contact:hover {
+            background: var(--accent-color);
+            color: #000 !important;
+        }
+        .header-social-icons {
+            justify-self: end;
+            display: flex;
+            gap: 15px;
+        }
+        .header-social-icons .social-icon {
+            color: #0066CC;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .header-social-icons .social-icon:hover { color: #004499; }
+        .contact-bar { display: none; }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #000;
+            cursor: pointer;
+        }
+        @media (max-width: 769px) {
+            .navbar { display: flex; justify-content: space-between; }
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            .nav-links.nav-active { display: flex; }
+            .header-social-icons { display: flex; gap: 10px; margin-right: 10px; }
+            .menu-toggle { display: block; order: 2; }
+            .logo { order: 1; }
+            .header-social-icons { order: 3; }
+        }
+
+
+#estimator .section-title {
+    font-size: 1.5rem !important;       
+    color: #0066CC !important;         
+}
+
+.footer-title {
+    font-size: 2rem !important;     
+}
+
+#estimator {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+    border-radius: 30px;
+    margin: 40px 0;
+}
+
+#estimator .container {
+    max-width: 1200px;
+}
+
+#estimator .section-title {
+    font-size: 2rem !important;
+    color: #0066CC !important;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 15px;
+}
+
+#estimator .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #0066CC, #FFD700);
+    border-radius: 3px;
+}
+
+#estimator .section-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.estimator-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estimator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.12);
+}
+
+.estimator-steps {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+}
+
+.step label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #0066CC;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.step label i {
+    font-size: 1.1rem;
+    color: #FFD700;
+}
+
+.step select, .step input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.step select:focus, .step input:focus {
+    border-color: #0066CC;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+}
+
+.range-toggle {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.range-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    background: #fff;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.range-btn.active {
+    background: #0066CC;
+    border-color: #0066CC;
+    color: white;
+}
+
+.range-btn:hover:not(.active) {
+    border-color: #0066CC;
+    background: #f0f7ff;
+}
+
+.estimator-result {
+    padding: 40px;
+    background: linear-gradient(135deg, #0066CC08 0%, #FFD70008 100%);
+    text-align: center;
+}
+
+.result-box {
+    margin-bottom: 30px;
+}
+
+.result-box span {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+#final-price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0066CC, #004499);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 10px 0;
+}
+
+.result-box p {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+#send-estimate {
+    background: linear-gradient(135deg, #0066CC, #004499);
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+}
+
+#send-estimate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,102,204,0.4);
+    background: linear-gradient(135deg, #004499, #002266);
+}
+
+#send-estimate i {
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    #estimator {
+        padding: 50px 0;
+        margin: 20px 0;
+    }
+    .estimator-steps {
+        padding: 25px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .result-box span {
+        font-size: 0.7rem;
+    }
+    #final-price {
+        font-size: 2.5rem;
+    }
+    #send-estimate {
+        padding: 12px 25px;
+        font-size: 0.85rem;
+    }
+}
+.footer-newsletter #newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter #newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+    text-align: center; 
+}
+
+@media (max-width: 600px) {
+    .footer-newsletter #newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-newsletter #newsletter-form input {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-newsletter #newsletter-form button {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 769px) and (pointer: fine) {
+    .footer-title {
+        font-size: 1.2rem !important;  
+        line-height: 1.2 !important;
+    }
+
+    .footer-newsletter #newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.footer-newsletter #newsletter-form input {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    padding: 12px;
+}
+
+.footer-newsletter #newsletter-form button {
+    width: auto;
+    min-width: 200px;
+}
+}
+    </style>
+</head>
+<body class="light-mode">
+    <div class="cursor-follower"></div>
+
+    <div class="header-wrapper">
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../">
+                        <img src="../logo-bat-prefab.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="../">Accueil</a></li>
+                    <li><a href="../a-propos/">À propos</a></li>
+                    <li><a href="../nos-realisations/">Réalisations</a></li>
+                    <li><a href="../catalogue/">Catalogue</a></li>
+                    <li><a href="../contact">Contact</a></li>
+                </ul>
+
+                <div class="header-social-icons">
+                    <a href="tel:+2250556121339" class="social-icon"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://wa.me/2250556121339" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:contact@batprefab.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/Batprefab.ci" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/bat-prefab" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="ticker-bar">
+            <button id="promo-trigger-btn" onclick="openPromo()">
+                <i class="fas fa-fire"></i> OFFRES SPÉCIALES
+            </button>
+            <div class="ticker-wrapper">
+                <div class="ticker-content">
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="services-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="reveal-text">Nos services</h1>
+            <p>Solutions de construction innovantes et durables</p>
+        </div>
+    </section>
+
+    <section class="services-main">
+        <div id="accordion-container" class="accordion-wrapper"></div>
+        <div id="services-dynamic-container"></div>
+    </section>
+
+    <div id="service-lightbox" class="service-lightbox" style="display: none;">
+        <div class="svc-lb-content">
+            <button class="svc-lb-close-btn" onclick="window.closeServiceLightbox()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="svc-lb-grid">
+                <div class="svc-lb-image-side">
+                    <img id="svc-lb-img" src="" alt="Service">
+                    <div class="svc-lb-nav">
+                        <button onclick="window.changeServiceImg(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <button onclick="window.changeServiceImg(1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div id="svc-lb-text-custom" class="svc-lb-text-side"></div>
+            </div>
+        </div>
+    </div>
+
+    <section id="estimator" class="section reveal">
+        <div class="container">
+            <h2 class="section-title reveal-text">ESTIMATEUR DE PROJET</h2>
+            <p class="section-subtitle">Obtenez une première estimation de votre investissement (ce resultats n'est pas un devis).</p>
+
+            <div class="estimator-card">
+                <div class="estimator-steps">
+                    <div class="step">
+                        <label><i class="fas fa-hammer"></i> Type de Projet</label>
+                        <select id="est-category">
+                            <option value="construction">Bâtiment / Préfabriqués</option>
+                            <option value="finition">Finitions (Carrelage, Peinture...)</option>
+                            <option value="technique">Équipements (Élec, Clim...)</option>
+                        </select>
+                    </div>
+
+                    <div class="step">
+                        <label id="label-surface"><i class="fas fa-ruler-combined"></i> Surface estimée (m²)</label>
+                        <input type="number" id="est-surface" value="50" min="1">
+                    </div>
+
+                    <div class="step">
+                        <label><i class="fas fa-layer-group"></i> Niveau de Finition</label>
+                        <div class="range-toggle">
+                            <button class="range-btn active" data-range="standard">STANDARD</button>
+                            <button class="range-btn" data-range="premium">PREMIUM</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estimator-result">
+                    <div class="result-box">
+                        <span>ESTIMATION APPROXIMATIVE</span>
+                        <h2 id="final-price">0 FCFA</h2>
+                        <p>*Hors taxes et frais de terrain. Basé sur les prix moyens du marché.</p>
+                    </div>
+                    <button class="btn-plans-trigger" id="send-estimate">RECEVOIR UN DEVIS DETAILLÉ ET PERSONNALISÉ<i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="nos-contact" class="footer-section reveal">
+        <div class="container">
+            <div class="footer-grid reveal-delay-1">
+                <div class="footer-col col-left">
+                    <h2 class="footer-title">DÉMARRONS<br>VOTRE PROJET</h2>
+                    <p class="footer-tagline">L'expertise de l'acier et du béton.</p>
+                    <div class="social-wrapper">
+                        <h4 class="social-label">SUIVEZ-NOUS</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/bat-prefab" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/Batprefab.ci" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.goafricaonline.com/ci/581881-batprefab-construction-abidjan-cote-ivoire" target="_blank"><i class="fas fa-globe-africa"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col col-center">
+                    <h4 class="social-label">SIÈGE / CÔTE D'IVOIRE</h4>
+                    <div class="footer-contact-item" style="margin-bottom:15px;">
+                        <i class="fas fa-envelope highlight"></i>
+                        <a href="mailto:contact@batprefab.com">contact@batprefab.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+2250556121339">+225 05 56 12 13 39</a>
+                        <a href="https://wa.me/2250556121339" style="margin-left:10px;" title="Discuter sur WhatsApp">
+                            <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+2250789855251">+225 07 89 85 52 51</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt highlight"></i>
+                        <a href="tel:+2252721399717">+225 27 21 39 97 17</a>
+                    </div>
+                </div>
+                <div class="footer-col col-right">
+                    <h4 class="social-label">INTERNATIONAL</h4>
+                    <div style="margin-bottom:5px; font-weight:bold; color:var(--accent-color); font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Burkina Faso</div>
+                    <div class="footer-contact-item" style="margin-bottom:15px; justify-content:flex-end;">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+22675240800">+226 75 24 08 00</a>
+                    </div>
+                    <div style="margin-bottom:5px; font-weight:bold; color:var(--accent-color); font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Togo</div>
+                    <div class="footer-contact-item" style="margin-bottom:15px; justify-content:flex-end;">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+22897106363">+228 97 10 63 63</a>
+                    </div>
+                    <div style="margin-bottom:5px; font-weight:bold; color:var(--accent-color); font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Cameroun</div>
+                    <div class="footer-contact-item" style="justify-content:flex-end;">
+                        <i class="fas fa-mobile-alt highlight"></i>
+                        <a href="tel:+237677554561">+237 6 77 55 45 61</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter" style="border-top:1px solid var(--line-color); padding:40px 0; margin-top:40px; text-align:center;">
+                <h4 style="font-family:var(--font-heading); color:var(--accent-color); margin-bottom:15px;">RESTEZ INFORMÉ</h4>
+                <p style="margin-bottom:20px; opacity:0.8; font-size:0.9rem;">Recevez nos dernières réalisations et offres exclusives.</p>
+                <form id="newsletter-form" style="display:flex; justify-content:center; gap:10px; max-width:500px; margin:0 auto; flex-wrap:wrap;">
+                    <input type="email" id="news-email" placeholder="VOTRE EMAIL" required 
+                           style="flex:1; padding:12px; background:#111; border:1px solid #333; color:white; min-width:250px;">
+                    <button type="submit" class="btn-plans-trigger" style="border:none; padding:12px 25px;">S'ABONNER</button>
+                </form>
+                <p id="news-feedback" style="color:var(--accent-color); margin-top:10px; font-size:0.8rem; display:none;"></p>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-about-cta" style="margin-bottom:40px; border-bottom:1px solid var(--line-color); padding-bottom:30px;">
+                    <h4 style="font-family:var(--font-heading); color:var(--accent-color); margin-bottom:10px;">VOUS VOULEZ EN SAVOIR PLUS ?</h4>
+                    <p style="margin-bottom:20px; opacity:0.8;">Découvrez notre histoire, nos valeurs et notre manifeste pour l'architecture ivoirienne.</p>
+                    <a href="/a-propos/" class="btn-plans-trigger" style="text-decoration:none; display:inline-block; padding:12px 30px;">
+                        En savoir plus sur Nous <i class="fas fa-arrow-right" style="margin-left:10px;"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    © <span id="current-year">2026</span> BAT & PREFAB.
+                    <span style="margin-left:10px;">Tous droits réservés.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="promo-overlay" class="promo-overlay">
+        <div class="promo-modal">
+            <span class="promo-close" onclick="closePromo()">&times;</span>
+            <div id="promo-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

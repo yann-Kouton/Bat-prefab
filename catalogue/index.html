@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Balises SEO principales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Catalogue produits construction préfabriquée | BAT & PREFAB – Solutions modulaires PDF</title>
+    <meta name="description" content="Téléchargez ou feuilletez le catalogue général BAT & PREFAB : constructions préfabriquées, modulaires, industrielles, gammes produits et solutions clés en main pour vos projets en Côte d'Ivoire et Afrique.">
+    <meta name="keywords" content="catalogue construction préfabriquée, PDF bâtiment modulaire, produits préfabriqués Côte d'Ivoire, catalogue BAT & PREFAB, télécharger brochure">
+    <meta name="author" content="BAT & PREFAB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.batprefab.com/catalogue/">
+    <link rel="alternate" hreflang="fr" href="https://www.batprefab.com/catalogue/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.batprefab.com/catalogue/">
+    <meta property="og:title" content="Catalogue BAT & PREFAB – Constructions préfabriquées et modulaires">
+    <meta property="og:description" content="Feuilletez en ligne ou téléchargez notre catalogue général. Découvrez nos gammes de bâtiments industriels, modulaires, préfabriqués.">
+    <meta property="og:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    <meta property="og:image:alt" content="Logo BAT & PREFAB - Catalogue construction préfabriquée">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="BAT & PREFAB">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Catalogue BAT & PREFAB – Solutions constructives">
+    <meta name="twitter:description" content="Documentation technique et commerciale de nos produits préfabriqués. Visualisez nos réalisations et spécifications.">
+    <meta name="twitter:image" content="https://www.batprefab.com/logo-bat-prefab.png">
+    
+    <!-- Données structurées (Catalogue / ItemList) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Catalogue des produits et solutions constructives",
+      "description": "Catalogue complet des constructions préfabriquées, modulaires et industrielles de BAT & PREFAB.",
+      "url": "https://www.batprefab.com/catalogue/",
+      "numberOfItems": 1,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Catalogue Général BAT & PREFAB",
+            "encodingFormat": "application/pdf",
+            "url": "https://www.batprefab.com/catalogue/PREFAB+1.pdf",
+            "description": "Brochure présentant l’ensemble des gammes : bâtiments préfabriqués, modulaires, structures métalliques, finitions, équipements techniques."
+          }
+        }
+      ],
+      "provider": {
+        "@type": "Organization",
+        "name": "BAT & PREFAB",
+        "url": "https://www.batprefab.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Abidjan",
+          "addressCountry": "Côte d'Ivoire"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+2250556121339",
+          "contactType": "customer service"
+        }
+      }
+    }
+    </script>
+    
+    <!-- Scripts et liens existants (conservés) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <style>
+        /* Styles spécifiques catalogue */
+        .pdf-section { background: #f4f4f4 !important; padding: 60px 0; }
+        .catalogue-card {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.3);
+            padding: 20px 10px 40px;
+            position: relative;
+        }
+        .swiper {
+            width: 100%;
+            padding: 20px 0 40px;
+        }
+        .swiper-slide {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            width: auto;
+            max-width: 100%;
+            max-height: 70vh;
+            display: block;
+            pointer-events: none;
+        }
+        .swiper-slide-active {
+            transform: scale(1.02);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+        }
+        .swiper-button-custom {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        .swiper-button-custom:hover {
+            background: var(--accent-color);
+            color: #000;
+            transform: translateY(-50%) scale(1.05);
+        }
+        .swiper-button-prev-custom { left: 15px; }
+        .swiper-button-next-custom { right: 15px; }
+        .page-info {
+            text-align: center;
+            margin: 15px 0 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #333;
+        }
+        .download-pdf {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-pdf a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #111;
+            color: var(--accent-color);
+            padding: 10px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--accent-color);
+            transition: 0.2s;
+        }
+        .download-pdf a:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+        .catalogue-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 140px 0 70px;
+            text-align: center;
+        }
+        .hero-title { font-size: clamp(2.5rem, 8vw, 5rem); }
+        .spinner-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+        .swiper-slide {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .swiper-slide img { max-height: 50vh; }
+            .swiper-button-custom { width: 36px; height: 36px; font-size: 1rem; }
+        }
+
+        /* ===== EN-TÊTE UNIFIÉ (identique à l'accueil) ===== */
+        .header-wrapper {
+            background: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            padding: 0 5%;
+            height: 70px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            justify-self: start;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            justify-self: center;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            text-transform: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            color: #000 !important;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition-slow);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .btn-contact {
+            padding: 8px 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color) !important;
+            font-size: 12px;
+            transition: var(--transition-fast);
+            text-transform: none;
+        }
+
+        .btn-contact:hover {
+            background: var(--accent-color);
+            color: #000 !important;
+        }
+
+        .header-social-icons {
+            justify-self: end;
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-social-icons .social-icon {
+            color: #0066CC;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .header-social-icons .social-icon:hover {
+            color: #004499;
+        }
+
+        .contact-bar {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #000;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+            }
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            .nav-links.nav-active {
+                display: flex;
+            }
+            .header-social-icons {
+                display: flex;
+                gap: 10px;
+                margin-right: 10px;
+            }
+            .menu-toggle {
+                display: block;
+                order: 2;
+            }
+            .logo {
+                order: 1;
+            }
+            .header-social-icons {
+                order: 3;
+            }
+        }
+
+        .catalogue-hero {
+            margin-top: 70px;
+        }
+        /* Centrage du champ email dans la newsletter */
+.footer-newsletter #newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter #newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+    text-align: center; /* centre le texte à l'intérieur */
+}
+
+/* Sur mobile, empiler les éléments et centrer l'input */
+@media (max-width: 600px) {
+    .footer-newsletter #newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-newsletter #newsletter-form input {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-newsletter #newsletter-form button {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+/* Augmentation de la phrase "L'excellence à portée de main" */
+.section-header p {
+    font-size: 1.5rem !important;   /* valeur par défaut ~1rem */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #555;
+}
+/* Masquer les flèches de navigation du catalogue sur mobile */
+@media (max-width: 768px) {
+    .swiper-button-custom {
+        display: none !important;
+    }
+}
+    </style>
+</head>
+<body class="light-mode">
+    <div class="cursor-follower"></div>
+
+    <div class="header-wrapper">
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../">
+                        <img src="../logo-bat-prefab.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="../">Accueil</a></li>
+                    <li><a href="../a-propos/">À propos</a></li>
+                    <li><a href="../nos-services/">Nos services</a></li>
+                    <li><a href="../nos-realisations/">Réalisations</a></li>
+                    <li><a href="../contact">Contact</a></li>
+                </ul>
+
+                <div class="header-social-icons">
+                    <a href="tel:+2250556121339" class="social-icon"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://wa.me/2250556121339" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:contact@batprefab.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/Batprefab.ci" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/bat-prefab" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="ticker-bar">
+            <button id="promo-trigger-btn" onclick="openPromo()">
+                <i class="fas fa-fire"></i> OFFRES SPÉCIALES
+            </button>
+            <div class="ticker-wrapper">
+                <div class="ticker-content">
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                    <span>L'ARCHITECTURE INDUSTRIELLE DE DEMAIN — BAT & PREFAB : RIGUEUR, PASSION ET INNOVATION — DISPONIBLE POUR VOS PROJETS — </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="catalogue-hero reveal">
+        <div class="container">
+            <h1 class="hero-title"><span class="anim-text">NOTRE</span><br><span class="anim-text">CATALOGUE</span></h1>
+            <div style="width: 80px; height: 4px; background: var(--accent-color); margin: 20px auto;"></div>
+            <p class="hero-subtitle" style="color: #ddd;">Feuilletez nos solutions constructives</p>
+        </div>
+    </section>
+
+    <section class="pdf-section section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-10">
+                <span class="section-label">DOCUMENTATION</span>
+                <h2 class="section-title" style="color: #000;">CATALOGUE GÉNÉRAL</h2>
+                <div style="width: 60px; height: 3px; background: var(--accent-color); margin: 20px auto;"></div>
+                <p style="color: #555;">L'excellence à portée de main</p>
+            </div>
+
+            <div class="catalogue-card">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="catalogue-slides"></div>
+                    <button id="prevBtn" class="swiper-button-custom swiper-button-prev-custom"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn" class="swiper-button-custom swiper-button-next-custom"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div id="page-info" class="page-info"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="nos-contact" class="footer-section reveal">
+        <div class="container">
+            <div class="footer-grid reveal-delay-1">
+                <div class="footer-col col-left">
+                    <h2 class="footer-title">DÉMARRONS<br>VOTRE PROJET</h2>
+                    <p class="footer-tagline">L'expertise de l'acier et du béton.</p>
+                    <div class="social-wrapper"><h4 class="social-label">SUIVEZ-NOUS</h4><div class="social-icons"><a href="https://www.linkedin.com/company/bat-prefab" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="https://www.facebook.com/Batprefab.ci" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.goafricaonline.com/ci/581881-batprefab-construction-abidjan-cote-ivoire" target="_blank"><i class="fas fa-globe-africa"></i></a></div></div>
+                </div>
+                <div class="footer-col col-center">
+                    <h4 class="social-label">SIÈGE / CÔTE D'IVOIRE</h4>
+                    <div class="footer-contact-item" style="margin-bottom:15px;"><i class="fas fa-envelope highlight"></i><a href="mailto:contact@batprefab.com">contact@batprefab.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-mobile-alt highlight"></i><a href="tel:+2250556121339">+225 05 56 12 13 39</a><a href="https://wa.me/2250556121339" style="margin-left:10px;"><i class="fab fa-whatsapp" style="color:#25D366;"></i></a></div>
+                    <div class="footer-contact-item"><i class="fas fa-mobile-alt highlight"></i><a href="tel:+2250789855251">+225 07 89 85 52 51</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt highlight"></i><a href="tel:+2252721399717">+225 27 21 39 97 17</a></div>
+                </div>
+                <div class="footer-col col-right">
+                    <h4 class="social-label">INTERNATIONAL</h4>
+                    <div style="margin-bottom:5px; font-weight:bold; color:var(--accent-color);">Burkina Faso</div>
+                    <div class="footer-contact-item" style="margin-bottom:15px; justify-content:flex-end;"><i class="fas fa-mobile-alt highlight"></i><a href="tel:+22675240800">+226 75 24 08 00</a></div>
+                    <div style="margin-bottom:5px; font-weight:bold; color:var(--accent-color);">Togo</div>
+                    <div class="footer-contact-item" style="margin-bottom:15px; justify-content:flex-end;"><i class="fas fa-mobile-alt highlight"></i><a href="tel:+22897106363">+228 97 10 63 63</a></div>
+                    <div style="margin-bottom:5px; font-weight:bold; color:var(--accent-color);">Cameroun</div>
+                    <div class="footer-contact-item" style="justify-content:flex-end;"><i class="fas fa-mobile-alt highlight"></i><a href="tel:+237677554561">+237 6 77 55 45 61</a></div>
+                </div>
+            </div>
+            <div class="footer-newsletter" style="border-top:1px solid var(--line-color); padding:40px 0; margin-top:40px; text-align:center;">
+                <h4 style="font-family:var(--font-heading); color:var(--accent-color);">RESTEZ INFORMÉ</h4>
+                <p style="margin-bottom:20px;">Recevez nos dernières réalisations et offres exclusives.</p>
+                <form id="newsletter-form" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                    <input type="email" id="news-email" placeholder="VOTRE EMAIL" required style="flex:1; padding:12px; background:#111; border:1px solid #333; color:white; min-width:250px;">
+                    <button type="submit" class="btn-plans-trigger" style="border:none; padding:12px 25px;">S'ABONNER</button>
+                </form>
+                <p id="news-feedback" style="color:var(--accent-color); margin-top:10px; display:none;"></p>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-about-cta" style="margin-bottom:40px; border-bottom:1px solid var(--line-color); padding-bottom:30px;">
+                    <h4 style="font-family:var(--font-heading); color:var(--accent-color);">VOUS VOULEZ EN SAVOIR PLUS ?</h4>
+                    <p>Découvrez notre histoire, nos valeurs et notre manifeste pour l'architecture ivoirienne.</p>
+                    <a href="/a-propos/" class="btn-plans-trigger" style="display:inline-block; padding:12px 30px;">En savoir plus sur Nous <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="copyright">© <span id="current-year">2026</span> BAT & PREFAB. Tous droits réservés.</div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="promo-overlay" class="promo-overlay"><div class="promo-modal"><span class="promo-close" onclick="closePromo()">&times;</span><div id="promo-body"></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../script.js"></script>
+
+    <script>
+        (function() {
+            const pdfUrl = "PREFAB+1.pdf";
+            let swiper = null;
+            let totalPages = 0;
+            let currentIndex = 0;
+            const slidesContainer = document.getElementById('catalogue-slides');
+            const pageInfoSpan = document.getElementById('page-info');
+
+            function createSlide(index) {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                const img = document.createElement('img');
+                img.alt = `Page ${index+1}`;
+                img.style.backgroundColor = '#f0f0f0';
+                const spinner = document.createElement('div');
+                spinner.className = 'spinner-placeholder';
+                spinner.innerHTML = '<i class="fas fa-spinner fa-pulse fa-2x"></i>';
+                slide.appendChild(img);
+                slide.appendChild(spinner);
+                return slide;
+            }
+
+            async function loadPDFSilently() {
+                try {
+                    const testFetch = await fetch(pdfUrl);
+                    if (!testFetch.ok) throw new Error(`Fichier introuvable (HTTP ${testFetch.status})`);
+                    
+                    const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+                    totalPages = pdf.numPages;
+                    pageInfoSpan.innerText = `Page 1 / ${totalPages}`;
+                    
+                    for (let i = 0; i < totalPages; i++) {
+                        slidesContainer.appendChild(createSlide(i));
+                    }
+                    
+                    setTimeout(() => {
+                        if (!swiper) {
+                            swiper = new Swiper('.mySwiper', {
+                                effect: 'coverflow',
+                                grabCursor: true,
+                                centeredSlides: true,
+                                slidesPerView: 'auto',
+                                coverflowEffect: {
+                                    rotate: 30,
+                                    stretch: 10,
+                                    depth: 100,
+                                    modifier: 1.5,
+                                    slideShadows: true,
+                                },
+                                keyboard: { enabled: true },
+                                on: {
+                                    slideChange: function() {
+                                        currentIndex = this.activeIndex;
+                                        pageInfoSpan.innerText = `Page ${currentIndex+1} / ${totalPages}`;
+                                    }
+                                }
+                            });
+                            document.getElementById('prevBtn').onclick = () => swiper.slidePrev();
+                            document.getElementById('nextBtn').onclick = () => swiper.slideNext();
+                        }
+                        loadPagesImages(pdf);
+                    }, 100);
+                } catch (err) {
+                    console.error(err);
+                    slidesContainer.innerHTML = `<div style="text-align:center; padding:50px; color:red;">Erreur : ${err.message}</div>`;
+                }
+            }
+            
+            async function loadPagesImages(pdf) {
+                for (let i = 0; i < totalPages; i++) {
+                    try {
+                        const page = await pdf.getPage(i+1);
+                        const viewport = page.getViewport({ scale: 1.6 });
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+                        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+                        const imgData = canvas.toDataURL();
+                        const slide = slidesContainer.children[i];
+                        if (slide) {
+                            const img = slide.querySelector('img');
+                            const spinner = slide.querySelector('.spinner-placeholder');
+                            img.src = imgData;
+                            if (spinner) spinner.remove();
+                        }
+                    } catch (e) {
+                        console.warn(`Erreur page ${i+1}`, e);
+                    }
+                }
+            }
+            
+            loadPDFSilently();
+            
+            window.openPromo = function() {
+                const overlay = document.getElementById('promo-overlay');
+                if (overlay) overlay.style.display = 'flex';
+            };
+            window.closePromo = function() {
+                const overlay = document.getElementById('promo-overlay');
+                if (overlay) overlay.style.display = 'none';
+            };
+        })();
+    </script>
+</body>
+</html>
